@@ -1,0 +1,18 @@
+@font-face {
+    font-family: 'Ranga-Regular';
+    src: url('Ranga-Regular.eot');
+    src: url('Ranga-Regular.eot?#iefix') format('embedded-opentype'),
+        url('Ranga-Regular.woff2') format('woff2'),
+        url('Ranga-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Ranga-Bold';
+    src: url('Ranga-Bold.eot');
+    src: url('Ranga-Bold.eot?#iefix') format('embedded-opentype'),
+        url('Ranga-Bold.woff2') format('woff2'),
+        url('Ranga-Bold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}

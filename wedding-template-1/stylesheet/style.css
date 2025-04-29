@@ -1,0 +1,93 @@
+/* Global Style */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-image: url("/assets/images/background.png");
+}
+
+div {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+}
+
+.page-wrapper {
+  min-height: 110vh;
+}
+
+.leaf {
+  width: 100%;
+  text-align: center;
+}
+
+.list-photo {
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  padding-bottom: 20%;
+  width: 100%;
+}
+
+.column-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.row-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-direction: row;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+}
+
+.footer-wrapper {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  max-width: 425px;
+}
+
+.footer-wrapper-mobile {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 24px 16px;
+  background-color: #9d9695;
+  -webkit-box-shadow: 0 -3px 5px -5px #333;
+          box-shadow: 0 -3px 5px -5px #333;
+}
+
+.icon {
+  width: 25;
+  height: 25;
+}
+
+@media only screen and (min-width: 768px) {
+  .mobile-view {
+    max-width: 425px;
+    margin: 0 auto;
+  }
+}
+
+/* Global Variable */
+:root {
+  --primary-color: blue;
+}
+/*# sourceMappingURL=style.css.map */

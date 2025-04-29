@@ -1,0 +1,18 @@
+@font-face {
+    font-family: 'Candlescript';
+    src: url('Candlescript.eot');
+    src: url('Candlescript.eot?#iefix') format('embedded-opentype'),
+        url('Candlescript.woff2') format('woff2'),
+        url('Candlescript.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'GreatVibes-Regular';
+    src: url('GreatVibes-Regular.eot');
+    src: url('GreatVibes-Regular.eot?#iefix') format('embedded-opentype'),
+        url('GreatVibes-Regular.woff2') format('woff2'),
+        url('GreatVibes-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
