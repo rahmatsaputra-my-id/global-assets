@@ -1,0 +1,43 @@
+name: Release Assets
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  release:
+    name: Release Package
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+          registry-url: https://registry.npmjs.org/
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Configure git user
+        run: |
+          git config --global user.name "rahmatsaputra"
+          git config --global user.email "rahmatsaputra@users.noreply.github.com"
+
+      - name: Generate assets
+        run: npm run generate:assets
+
+      - name: Bump version and release
+        run: |
+          npm install --save-dev standard-version
+          npx standard-version --release-as patch
+          npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NPM_CONFIG_REGISTRY: "https://registry.npmjs.org/"
