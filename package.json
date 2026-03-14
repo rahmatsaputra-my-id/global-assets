@@ -1,17 +1,17 @@
 {
   "name": "@rahmatsaputra-my-id/global-assets",
   "version": "1.0.0",
-  "main": "src/index.js",
-  "types": "src/index.d.ts",
-  "files": [
-    "src/**/*"
-  ],
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": ["dist/**/*"],
   "scripts": {
+    "build": "tsc",
     "generate:assets": "node scripts/generate-assets.js",
     "release": "standard-version",
     "release:publish": "standard-version && npm publish"
   },
   "devDependencies": {
-    "standard-version": "^9.5.0"
+    "standard-version": "^9.5.0",
+    "typescript": "^5.9.3"
   }
 }
