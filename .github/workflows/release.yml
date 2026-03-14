@@ -27,8 +27,8 @@ jobs:
 
       - name: Configure git user
         run: |
-          git config --global user.name "rahmatsaputra"
-          git config --global user.email "rahmatsaputra@users.noreply.github.com"
+          git config --global user.name "rahmatsaputra-my-id"
+          git config --global user.email "rahmatsaputra-my-id@users.noreply.github.com"
 
       - name: Generate assets
         run: npm run generate:assets
