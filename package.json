@@ -1,0 +1,5 @@
+{
+  "scripts": {
+    "generate:assets": "node scripts/generate-assets.js"
+  }
+}
