@@ -129,31 +129,25 @@ function generateColors() {
   };
 
   let colorsContent = "";
+  let typeDefinitions = "";
+
   Object.entries(COLORS_OBJ).forEach(([name, value]) => {
     if (typeof value === "string") {
       colorsContent += `  ${name}: "${value}",\n`;
+      typeDefinitions += `  readonly ${name}: "${value}";\n`;
     } else {
       colorsContent += `  ${name}: (Object as any).assign("${value[500]}", ${JSON.stringify(value)}),\n`;
+
+      typeDefinitions += `  readonly ${name}: "${value[500]}" & {\n`;
+      Object.entries(value).forEach(([step, hex]) => {
+        typeDefinitions += `    readonly "${step}": "${hex}";\n`;
+      });
+      typeDefinitions += `  };\n`;
     }
   });
 
   const content = `
-    /**
-     * Definisi tipe agar warna bisa berfungsi sebagai string 
-     * sekaligus objek yang memiliki shades.
-     */
-    type ColorScale = string & {
-      readonly [key in ${steps.join(" | ")}]: string;
-    };
-
-    export const COLORS: {
-      ${Object.keys(flatColors)
-        .map((name) => `readonly ${name}: string;`)
-        .join("\n  ")}
-      ${Object.keys(scaleColors)
-        .map((name) => `readonly ${name}: ColorScale;`)
-        .join("\n  ")}
-    } = {
+    export const COLORS: {\n${typeDefinitions}} = {
     ${colorsContent}
     } as any;
 
@@ -174,7 +168,6 @@ function generateColors() {
 
   const colorsFile = path.join(ROOT, "src", "COLORS.ts");
   fs.writeFileSync(colorsFile, content);
-  console.log("🎨 COLORS + THEMES generated (No TS Errors!)");
 }
 
 /**
