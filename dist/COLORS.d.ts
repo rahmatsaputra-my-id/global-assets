@@ -1,10 +1,10 @@
 export declare const COLORS: {
-    readonly white: "#FFFFFF";
+    readonly white: "#ffffff";
     readonly black: "#000000";
     readonly gray: "#808080";
-    readonly lightGray: "#D3D3D3";
-    readonly darkGray: "#4B4B4B";
-    readonly silver: "#C0C0C0";
+    readonly lightGray: "#d3d3d3";
+    readonly darkGray: "#4b4b4b";
+    readonly silver: "#c0c0c0";
     readonly red: {
         readonly "25": "#ffffff";
         readonly "50": "#ffd9cb";
@@ -319,4 +319,4 @@ export declare const THEMES: {
         readonly border: "#344054";
     };
 };
-export declare function withOpacity(color: string): (alpha: number) => any;
+export declare const withOpacity: (hexColor: string, opacity: number) => string;

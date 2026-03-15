@@ -37,12 +37,12 @@ function generateAsset(folder, name) {
   });
 
   const content = `
-    export const ${name.toUpperCase()} = {
-      ${items.join(",\n  ")}
-    } as const;
+export const ${name.toUpperCase()} = {
+  ${items.join(",\n  ")}
+} as const;
 
-    export type ${name.toUpperCase()}Name = keyof typeof ${name.toUpperCase()};
-  `;
+export type ${name.toUpperCase()}Name = keyof typeof ${name.toUpperCase()};
+`;
 
   fs.writeFileSync(path.join(ROOT, "src", `${name.toUpperCase()}.ts`), content);
   console.log(`✅ ${name.toUpperCase()} generated`);
@@ -102,39 +102,26 @@ function generateScale(color) {
 }
 
 /**
- * WRAP COLOR WITH OPTIONAL OPACITY
- */
-function withOpacity(color) {
-  const fn = (alpha) => chroma(color).alpha(alpha).css("rgba");
-  fn.toString = () => color;
-  fn.valueOf = () => color;
-  return fn;
-}
-
-/**
  * GENERATE COLORS OBJECT
  */
 function generateColors() {
   const COLORS = {};
 
-  // Flat colors, langsung hex
   Object.entries(flatColors).forEach(([name, color]) => {
-    COLORS[name] = color; // default hex
+    COLORS[name] = chroma(color).hex();
   });
 
-  // Scale colors
   Object.entries(scaleColors).forEach(([name, color]) => {
-    const scale = generateScale(color);
-    COLORS[name] = scale; // simpan object scale saja
+    COLORS[name] = generateScale(color);
   });
 
-  // Themes
   const lightTheme = {
     background: "#FFFFFF",
     surface: "#F9FAFB",
     text: "#101828",
     border: "#E4E7EC",
   };
+
   const darkTheme = {
     background: "#0C111D",
     surface: "#1D2939",
@@ -143,8 +130,6 @@ function generateColors() {
   };
 
   const content = `
-    import chroma from 'chroma-js';
-
     export const COLORS = ${JSON.stringify(COLORS, null, 2)} as const;
 
     export const THEMES = {
@@ -152,9 +137,12 @@ function generateColors() {
       dark: ${JSON.stringify(darkTheme, null, 2)}
     } as const;
 
-    export function withOpacity(color: string) {
-      return (alpha: number) => chroma(color).alpha(alpha).css();
-    }
+    export const withOpacity = (hexColor: string, opacity: number): string => {
+      const r = parseInt(hexColor.slice(1, 3), 16);
+      const g = parseInt(hexColor.slice(3, 5), 16);
+      const b = parseInt(hexColor.slice(5, 7), 16);
+      return \`rgba(\${r}, \${g}, \${b}, \${opacity})\`;
+    };
   `;
 
   const colorsFile = path.join(ROOT, "src", "COLORS.ts");

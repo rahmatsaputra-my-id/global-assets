@@ -1,13 +1,11 @@
 
-    import chroma from 'chroma-js';
-
     export const COLORS = {
-  "white": "#FFFFFF",
+  "white": "#ffffff",
   "black": "#000000",
   "gray": "#808080",
-  "lightGray": "#D3D3D3",
-  "darkGray": "#4B4B4B",
-  "silver": "#C0C0C0",
+  "lightGray": "#d3d3d3",
+  "darkGray": "#4b4b4b",
+  "silver": "#c0c0c0",
   "red": {
     "25": "#ffffff",
     "50": "#ffd9cb",
@@ -324,7 +322,10 @@
 }
     } as const;
 
-    export function withOpacity(color: string) {
-      return (alpha: number) => chroma(color).alpha(alpha).css();
-    }
+    export const withOpacity = (hexColor: string, opacity: number): string => {
+      const r = parseInt(hexColor.slice(1, 3), 16);
+      const g = parseInt(hexColor.slice(3, 5), 16);
+      const b = parseInt(hexColor.slice(5, 7), 16);
+      return `rgba(${r}, ${g}, ${b}, ${opacity})`;
+    };
   
