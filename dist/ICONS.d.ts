@@ -1,4 +1,4 @@
-export declare const ICONS: {
+export declare const icons: {
     readonly arrow_bottom: "https://raw.githubusercontent.com/rahmatsaputra-my-id/global-assets/master/icons/icon-arrow-bottom.png";
     readonly arrow_left_white: "https://raw.githubusercontent.com/rahmatsaputra-my-id/global-assets/master/icons/icon-arrow-left-white.png";
     readonly arrow_left: "https://raw.githubusercontent.com/rahmatsaputra-my-id/global-assets/master/icons/icon-arrow-left.png";
@@ -80,4 +80,4 @@ export declare const ICONS: {
     readonly whatsapp_green: "https://raw.githubusercontent.com/rahmatsaputra-my-id/global-assets/master/icons/icon-whatsapp-green.png";
     readonly whatsapp: "https://raw.githubusercontent.com/rahmatsaputra-my-id/global-assets/master/icons/icon-whatsapp.png";
 };
-export type ICONSName = keyof typeof ICONS;
+export type iconsName = keyof typeof icons;

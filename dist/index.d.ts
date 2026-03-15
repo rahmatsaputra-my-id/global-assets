@@ -1,4 +1,4 @@
 export * from "./ICONS";
 export * from "./IMAGES";
 export * from "./FONTS";
-export { COLORS, THEMES } from "./COLORS";
+export { colors, themes } from "./COLORS";

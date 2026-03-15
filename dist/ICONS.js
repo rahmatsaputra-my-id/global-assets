@@ -1,4 +1,4 @@
-export var ICONS = {
+export var icons = {
     arrow_bottom: "https://raw.githubusercontent.com/rahmatsaputra-my-id/global-assets/master/icons/icon-arrow-bottom.png",
     arrow_left_white: "https://raw.githubusercontent.com/rahmatsaputra-my-id/global-assets/master/icons/icon-arrow-left-white.png",
     arrow_left: "https://raw.githubusercontent.com/rahmatsaputra-my-id/global-assets/master/icons/icon-arrow-left.png",

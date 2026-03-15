@@ -1,4 +1,4 @@
-export var IMAGES = {
+export var images = {
     depracated: "https://raw.githubusercontent.com/rahmatsaputra-my-id/global-assets/master/images/depracated",
     image_alt_business: "https://raw.githubusercontent.com/rahmatsaputra-my-id/global-assets/master/images/image-alt-business.png",
     image_alt_entertainment: "https://raw.githubusercontent.com/rahmatsaputra-my-id/global-assets/master/images/image-alt-entertainment.png",

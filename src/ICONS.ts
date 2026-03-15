@@ -1,5 +1,5 @@
 
-    export const ICONS = {
+    export const icons = {
       arrow_bottom: `https://raw.githubusercontent.com/rahmatsaputra-my-id/global-assets/master/icons/icon-arrow-bottom.png`,
   arrow_left_white: `https://raw.githubusercontent.com/rahmatsaputra-my-id/global-assets/master/icons/icon-arrow-left-white.png`,
   arrow_left: `https://raw.githubusercontent.com/rahmatsaputra-my-id/global-assets/master/icons/icon-arrow-left.png`,
@@ -82,5 +82,5 @@
   whatsapp: `https://raw.githubusercontent.com/rahmatsaputra-my-id/global-assets/master/icons/icon-whatsapp.png`
     } as const;
 
-    export type ICONSName = keyof typeof ICONS;
+    export type iconsName = keyof typeof icons;
   

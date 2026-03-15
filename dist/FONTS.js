@@ -1,4 +1,4 @@
-export var FONTS = {
+export var fonts = {
     candlescript: "https://raw.githubusercontent.com/rahmatsaputra-my-id/global-assets/master/fonts/Candlescript",
     greatvibes_regular: "https://raw.githubusercontent.com/rahmatsaputra-my-id/global-assets/master/fonts/GreatVibes-Regular",
     ranga: "https://raw.githubusercontent.com/rahmatsaputra-my-id/global-assets/master/fonts/Ranga",

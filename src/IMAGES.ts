@@ -1,5 +1,5 @@
 
-    export const IMAGES = {
+    export const images = {
       depracated: `https://raw.githubusercontent.com/rahmatsaputra-my-id/global-assets/master/images/depracated`,
   image_alt_business: `https://raw.githubusercontent.com/rahmatsaputra-my-id/global-assets/master/images/image-alt-business.png`,
   image_alt_entertainment: `https://raw.githubusercontent.com/rahmatsaputra-my-id/global-assets/master/images/image-alt-entertainment.png`,
@@ -65,5 +65,5 @@
   image_quote_header: `https://raw.githubusercontent.com/rahmatsaputra-my-id/global-assets/master/images/image-quote-header.png`
     } as const;
 
-    export type IMAGESName = keyof typeof IMAGES;
+    export type imagesName = keyof typeof images;
   

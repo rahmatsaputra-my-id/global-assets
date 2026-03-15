@@ -1,4 +1,4 @@
-export declare const IMAGES: {
+export declare const images: {
     readonly depracated: "https://raw.githubusercontent.com/rahmatsaputra-my-id/global-assets/master/images/depracated";
     readonly image_alt_business: "https://raw.githubusercontent.com/rahmatsaputra-my-id/global-assets/master/images/image-alt-business.png";
     readonly image_alt_entertainment: "https://raw.githubusercontent.com/rahmatsaputra-my-id/global-assets/master/images/image-alt-entertainment.png";
@@ -63,4 +63,4 @@ export declare const IMAGES: {
     readonly image_qris: "https://raw.githubusercontent.com/rahmatsaputra-my-id/global-assets/master/images/image-qris.png";
     readonly image_quote_header: "https://raw.githubusercontent.com/rahmatsaputra-my-id/global-assets/master/images/image-quote-header.png";
 };
-export type IMAGESName = keyof typeof IMAGES;
+export type imagesName = keyof typeof images;

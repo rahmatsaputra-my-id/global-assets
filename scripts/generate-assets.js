@@ -37,15 +37,15 @@ function generateAsset(folder, name) {
   });
 
   const content = `
-    export const ${name.toUpperCase()} = {
+    export const ${name.toLowerCase()} = {
       ${items.join(",\n  ")}
     } as const;
 
-    export type ${name.toUpperCase()}Name = keyof typeof ${name.toUpperCase()};
+    export type ${name.toLowerCase()}Name = keyof typeof ${name.toLowerCase()};
   `;
 
-  fs.writeFileSync(path.join(ROOT, "src", `${name.toUpperCase()}.ts`), content);
-  console.log(`✅ ${name.toUpperCase()} generated`);
+  fs.writeFileSync(path.join(ROOT, "src", `${name.toLowerCase()}.ts`), content);
+  console.log(`✅ ${name.toLowerCase()} generated`);
 }
 
 /**
@@ -86,7 +86,7 @@ const scaleColors = {
   info: "#3C8DFF",
 };
 
-const steps = [25, 50, 100, 200, 300, 400, 500, 600, 700, 800, 900];
+const steps = [50, 100, 200, 300, 400, 500, 600, 700, 800];
 
 /**
  * GENERATE SCALE
@@ -146,11 +146,11 @@ function generateColors() {
   });
 
   const content = `
-    export const COLORS: {\n${typeDefinitions}} = {
+    export const colors: {\n${typeDefinitions}} = {
     ${colorsContent}
     } as any;
 
-    export const THEMES = {
+    export const themes = {
       light: ${JSON.stringify(lightTheme, null, 2)},
       dark: ${JSON.stringify(darkTheme, null, 2)}
     } as const;
