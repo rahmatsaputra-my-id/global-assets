@@ -320,3 +320,4 @@ export declare const THEMES: {
     };
 };
 export declare const withOpacity: (color: string | any, opacity: number) => string;
+export declare const withGradient: (color: string | any, toColor?: string, direction?: string) => string;

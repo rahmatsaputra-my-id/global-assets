@@ -361,4 +361,9 @@
       const b = parseInt(hex.slice(5, 7), 16);
       return `rgba(${r}, ${g}, ${b}, ${opacity})`;
     };
+
+    export const withGradient = (color: string | any, toColor: string = 'transparent', direction: string = 'to bottom'): string => {
+      const from = typeof color === 'string' ? color : color.toString();
+      return `linear-gradient(${direction}, ${from}, ${toColor})`;
+    };
   

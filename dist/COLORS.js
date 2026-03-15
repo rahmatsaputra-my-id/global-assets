@@ -52,3 +52,9 @@ export var withOpacity = function (color, opacity) {
     var b = parseInt(hex.slice(5, 7), 16);
     return "rgba(".concat(r, ", ").concat(g, ", ").concat(b, ", ").concat(opacity, ")");
 };
+export var withGradient = function (color, toColor, direction) {
+    if (toColor === void 0) { toColor = 'transparent'; }
+    if (direction === void 0) { direction = 'to bottom'; }
+    var from = typeof color === 'string' ? color : color.toString();
+    return "linear-gradient(".concat(direction, ", ").concat(from, ", ").concat(toColor, ")");
+};

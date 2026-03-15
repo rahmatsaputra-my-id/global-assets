@@ -137,7 +137,6 @@ function generateColors() {
       typeDefinitions += `  readonly ${name}: "${value}";\n`;
     } else {
       colorsContent += `  ${name}: (Object as any).assign("${value[500]}", ${JSON.stringify(value)}),\n`;
-
       typeDefinitions += `  readonly ${name}: "${value[500]}" & {\n`;
       Object.entries(value).forEach(([step, hex]) => {
         typeDefinitions += `    readonly "${step}": "${hex}";\n`;
@@ -163,6 +162,11 @@ function generateColors() {
       const g = parseInt(hex.slice(3, 5), 16);
       const b = parseInt(hex.slice(5, 7), 16);
       return \`rgba(\${r}, \${g}, \${b}, \${opacity})\`;
+    };
+
+    export const withGradient = (color: string | any, toColor: string = 'transparent', direction: string = 'to bottom'): string => {
+      const from = typeof color === 'string' ? color : color.toString();
+      return \`linear-gradient(\${direction}, \${from}, \${toColor})\`;
     };
   `;
 
