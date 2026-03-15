@@ -1,9 +1,11 @@
 {
   "name": "@rahmatsaputra-my-id/global-assets",
-  "version": "1.0.3",
+  "version": "1.1.0",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
-  "files": ["dist/**/*"],
+  "files": [
+    "dist/**/*"
+  ],
   "scripts": {
     "build": "tsc",
     "generate:assets": "node scripts/generate-assets.js",
@@ -13,5 +15,8 @@
   "devDependencies": {
     "standard-version": "^9.5.0",
     "typescript": "^5.9.3"
+  },
+  "dependencies": {
+    "chroma-js": "^3.2.0"
   }
 }
