@@ -44,38 +44,60 @@ function generateAsset(folder, name) {
   });
 
   const content = `
-    export const ${name.toUpperCase()} = {
-      ${items.join(",\n  ")}
-    } as const;
+export const ${name.toUpperCase()} = {
+  ${items.join(",\n  ")}
+} as const;
 
-    export type ${name.toUpperCase()}Name = keyof typeof ${name.toUpperCase()};
-  `;
+export type ${name.toUpperCase()}Name = keyof typeof ${name.toUpperCase()};
+`;
 
   fs.writeFileSync(path.join(ROOT, "src", `${name.toUpperCase()}.ts`), content);
   console.log(`✅ ${name.toUpperCase()} generated`);
 }
 
 /**
- * GENERATE COLOR PALETTES
+ * BASE COLORS
  */
-const baseColors = {
+const flatColors = {
+  white: "#FFFFFF",
+  black: "#000000",
+  gray: "#808080",
+  lightGray: "#D3D3D3",
+  darkGray: "#4B4B4B",
+  silver: "#C0C0C0",
+};
+
+const scaleColors = {
+  red: "#FF0000",
+  blue: "#0000FF",
+  green: "#00FF00",
+  yellow: "#FFFF00",
+  orange: "#FFA500",
+  purple: "#800080",
+  pink: "#FFC0CB",
+  cyan: "#00FFFF",
+  teal: "#008080",
+  indigo: "#4B0082",
+  brown: "#A52A2A",
+  lime: "#32CD32",
+  magenta: "#FF00FF",
+  navy: "#000080",
+  olive: "#808000",
+  maroon: "#800000",
+  gold: "#FFD700",
   primary: "#B82025",
   secondary: "#1E5EFF",
   success: "#2AC769",
   warning: "#FFB020",
   error: "#FF5630",
   info: "#3C8DFF",
-
-  purple: "#7A5AF8",
-  pink: "#EE46BC",
-  orange: "#F79009",
-  teal: "#14B8A6",
-  cyan: "#06B6D4",
-  indigo: "#6366F1",
 };
 
 const steps = [25, 50, 100, 200, 300, 400, 500, 600, 700, 800, 900];
 
+/**
+ * GENERATE SCALE
+ */
 function generateScale(color) {
   const scale = chroma
     .scale(["#ffffff", color, "#000000"])
@@ -86,13 +108,35 @@ function generateScale(color) {
   steps.forEach((step, i) => {
     result[step] = scale[i];
   });
+
   return result;
 }
 
+/**
+ * GENERATE COLORS
+ */
 function generateColors() {
-  const palettes = {};
-  Object.entries(baseColors).forEach(([name, color]) => {
-    palettes[name.toLowerCase()] = generateScale(color);
+  const COLORS = {};
+
+  // Flat colors, tanpa scale
+  Object.entries(flatColors).forEach(([name, color]) => {
+    COLORS[name] = color;
+  });
+
+  // Scale colors
+  Object.entries(scaleColors).forEach(([name, color]) => {
+    const scale = generateScale(color);
+
+    // Proxy untuk default 500
+    COLORS[name] = new Proxy(scale, {
+      get(target, prop) {
+        if (prop === "toString") return () => target[500];
+        if (prop === "valueOf") return () => target[500];
+        if (prop === Symbol.toPrimitive) return () => target[500];
+        if (prop in target) return target[prop];
+        return target[500]; // fallback
+      },
+    });
   });
 
   const lightTheme = {
@@ -110,24 +154,26 @@ function generateColors() {
   };
 
   const content = `
-    export const COLORS = ${JSON.stringify(palettes, null, 2)} as const;
+export const COLORS = ${JSON.stringify(COLORS, null, 2)} as const;
 
-    export const THEMES = {
-      light: ${JSON.stringify(lightTheme, null, 2)},
-      dark: ${JSON.stringify(darkTheme, null, 2)}
-    } as const;
+export const THEMES = {
+  light: ${JSON.stringify(lightTheme, null, 2)},
+  dark: ${JSON.stringify(darkTheme, null, 2)}
+} as const;
 
-    export type PaletteName = keyof typeof COLORS;
-    export type ThemeName = keyof typeof THEMES;
-  `;
+export type ThemeColorName = ${Object.keys(scaleColors)
+    .map((c) => `"${c}"`)
+    .join(" | ")};
+export type ThemeName = keyof typeof THEMES;
+`;
 
   const colorsFile = path.join(ROOT, "src", "COLORS.ts");
   fs.writeFileSync(colorsFile, content);
-  console.log("🎨 COLORS generated in src/COLORS.ts");
+  console.log("🎨 COLORS + THEMES generated in src/COLORS.ts");
 }
 
 /**
- * RUN GENERATORS
+ * RUN ALL GENERATORS
  */
 Object.entries(folders).forEach(([folder, name]) => {
   generateAsset(folder, name);
