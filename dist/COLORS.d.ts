@@ -319,5 +319,4 @@ export declare const THEMES: {
         readonly border: "#344054";
     };
 };
-export type ThemeColorName = "red" | "blue" | "green" | "yellow" | "orange" | "purple" | "pink" | "cyan" | "teal" | "indigo" | "brown" | "lime" | "magenta" | "navy" | "olive" | "maroon" | "gold" | "primary" | "secondary" | "success" | "warning" | "error" | "info";
-export type ThemeName = keyof typeof THEMES;
+export declare function withOpacity(color: string): (alpha: number) => any;

@@ -1,3 +1,4 @@
+import chroma from 'chroma-js';
 export var COLORS = {
     "white": "#FFFFFF",
     "black": "#000000",
@@ -319,3 +320,6 @@ export var THEMES = {
         "border": "#344054"
     }
 };
+export function withOpacity(color) {
+    return function (alpha) { return chroma(color).alpha(alpha).css(); };
+}

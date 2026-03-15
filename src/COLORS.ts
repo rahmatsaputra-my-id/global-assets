@@ -1,5 +1,7 @@
 
-export const COLORS = {
+    import chroma from 'chroma-js';
+
+    export const COLORS = {
   "white": "#FFFFFF",
   "black": "#000000",
   "gray": "#808080",
@@ -307,20 +309,22 @@ export const COLORS = {
   }
 } as const;
 
-export const THEMES = {
-  light: {
+    export const THEMES = {
+      light: {
   "background": "#FFFFFF",
   "surface": "#F9FAFB",
   "text": "#101828",
   "border": "#E4E7EC"
 },
-  dark: {
+      dark: {
   "background": "#0C111D",
   "surface": "#1D2939",
   "text": "#F2F4F7",
   "border": "#344054"
 }
-} as const;
+    } as const;
 
-export type ThemeColorName = "red" | "blue" | "green" | "yellow" | "orange" | "purple" | "pink" | "cyan" | "teal" | "indigo" | "brown" | "lime" | "magenta" | "navy" | "olive" | "maroon" | "gold" | "primary" | "secondary" | "success" | "warning" | "error" | "info";
-export type ThemeName = keyof typeof THEMES;
+    export function withOpacity(color: string) {
+      return (alpha: number) => chroma(color).alpha(alpha).css();
+    }
+  
