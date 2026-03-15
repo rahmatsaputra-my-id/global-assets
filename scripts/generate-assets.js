@@ -112,7 +112,12 @@ function generateColors() {
   });
 
   Object.entries(scaleColors).forEach(([name, color]) => {
-    COLORS[name] = generateScale(color);
+    const scale = generateScale(color);
+
+    COLORS[name] = {
+      ...scale,
+      main: scale[500],
+    };
   });
 
   const lightTheme = {
@@ -137,7 +142,10 @@ function generateColors() {
       dark: ${JSON.stringify(darkTheme, null, 2)}
     } as const;
 
+
     export const withOpacity = (hexColor: string, opacity: number): string => {
+      if (typeof hexColor !== 'string') return 'rgba(0,0,0,0)';
+      
       const r = parseInt(hexColor.slice(1, 3), 16);
       const g = parseInt(hexColor.slice(3, 5), 16);
       const b = parseInt(hexColor.slice(5, 7), 16);

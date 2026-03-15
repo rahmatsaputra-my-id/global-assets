@@ -17,6 +17,7 @@ export declare const COLORS: {
         readonly "700": "#62190c";
         readonly "800": "#341307";
         readonly "900": "#000000";
+        readonly main: "#c81708";
     };
     readonly blue: {
         readonly "25": "#ffffff";
@@ -30,6 +31,7 @@ export declare const COLORS: {
         readonly "700": "#22115f";
         readonly "800": "#180d31";
         readonly "900": "#000000";
+        readonly main: "#200dc7";
     };
     readonly green: {
         readonly "25": "#ffffff";
@@ -43,6 +45,7 @@ export declare const COLORS: {
         readonly "700": "#215f18";
         readonly "800": "#183112";
         readonly "900": "#000000";
+        readonly main: "#20c715";
     };
     readonly yellow: {
         readonly "25": "#ffffff";
@@ -56,6 +59,7 @@ export declare const COLORS: {
         readonly "700": "#605e19";
         readonly "800": "#323013";
         readonly "900": "#000000";
+        readonly main: "#c7c617";
     };
     readonly orange: {
         readonly "25": "#ffffff";
@@ -69,6 +73,7 @@ export declare const COLORS: {
         readonly "700": "#604013";
         readonly "800": "#32230f";
         readonly "900": "#000000";
+        readonly main: "#c78210";
     };
     readonly purple: {
         readonly "25": "#ffffff";
@@ -82,6 +87,7 @@ export declare const COLORS: {
         readonly "700": "#351134";
         readonly "800": "#1e0d1d";
         readonly "900": "#000000";
+        readonly main: "#660d65";
     };
     readonly pink: {
         readonly "25": "#ffffff";
@@ -95,6 +101,7 @@ export declare const COLORS: {
         readonly "700": "#5f494d";
         readonly "800": "#312728";
         readonly "900": "#000000";
+        readonly main: "#c6969f";
     };
     readonly cyan: {
         readonly "25": "#ffffff";
@@ -108,6 +115,7 @@ export declare const COLORS: {
         readonly "700": "#225f5e";
         readonly "800": "#183130";
         readonly "900": "#000000";
+        readonly main: "#21c6c6";
     };
     readonly teal: {
         readonly "25": "#ffffff";
@@ -121,6 +129,7 @@ export declare const COLORS: {
         readonly "700": "#143433";
         readonly "800": "#101d1d";
         readonly "900": "#000000";
+        readonly main: "#116565";
     };
     readonly indigo: {
         readonly "25": "#ffffff";
@@ -134,6 +143,7 @@ export declare const COLORS: {
         readonly "700": "#230d35";
         readonly "800": "#18081e";
         readonly "900": "#000000";
+        readonly main: "#3e0867";
     };
     readonly brown: {
         readonly "25": "#ffffff";
@@ -147,6 +157,7 @@ export declare const COLORS: {
         readonly "700": "#421915";
         readonly "800": "#25110d";
         readonly "900": "#000000";
+        readonly main: "#832523";
     };
     readonly lime: {
         readonly "25": "#ffffff";
@@ -160,6 +171,7 @@ export declare const COLORS: {
         readonly "700": "#214e1c";
         readonly "800": "#162913";
         readonly "900": "#000000";
+        readonly main: "#2fa02b";
     };
     readonly magenta: {
         readonly "25": "#ffffff";
@@ -173,6 +185,7 @@ export declare const COLORS: {
         readonly "700": "#601c5f";
         readonly "800": "#321531";
         readonly "900": "#000000";
+        readonly main: "#c71ac6";
     };
     readonly navy: {
         readonly "25": "#ffffff";
@@ -186,6 +199,7 @@ export declare const COLORS: {
         readonly "700": "#160734";
         readonly "800": "#11031e";
         readonly "900": "#000000";
+        readonly main: "#110565";
     };
     readonly olive: {
         readonly "25": "#ffffff";
@@ -199,6 +213,7 @@ export declare const COLORS: {
         readonly "700": "#35330f";
         readonly "800": "#1f1d0a";
         readonly "900": "#000000";
+        readonly main: "#66650b";
     };
     readonly maroon: {
         readonly "25": "#ffffff";
@@ -212,6 +227,7 @@ export declare const COLORS: {
         readonly "700": "#370f01";
         readonly "800": "#220a01";
         readonly "900": "#000000";
+        readonly main: "#670b01";
     };
     readonly gold: {
         readonly "25": "#ffffff";
@@ -225,6 +241,7 @@ export declare const COLORS: {
         readonly "700": "#605117";
         readonly "800": "#322a11";
         readonly "900": "#000000";
+        readonly main: "#c7a814";
     };
     readonly primary: {
         readonly "25": "#ffffff";
@@ -238,6 +255,7 @@ export declare const COLORS: {
         readonly "700": "#491814";
         readonly "800": "#29110c";
         readonly "900": "#000000";
+        readonly main: "#911f1f";
     };
     readonly secondary: {
         readonly "25": "#ffffff";
@@ -251,6 +269,7 @@ export declare const COLORS: {
         readonly "700": "#21285f";
         readonly "800": "#171731";
         readonly "900": "#000000";
+        readonly main: "#274bc7";
     };
     readonly success: {
         readonly "25": "#ffffff";
@@ -264,6 +283,7 @@ export declare const COLORS: {
         readonly "700": "#1e4c2c";
         readonly "800": "#15281a";
         readonly "900": "#000000";
+        readonly main: "#299c54";
     };
     readonly warning: {
         readonly "25": "#ffffff";
@@ -277,6 +297,7 @@ export declare const COLORS: {
         readonly "700": "#604418";
         readonly "800": "#322411";
         readonly "900": "#000000";
+        readonly main: "#c78a20";
     };
     readonly error: {
         readonly "25": "#ffffff";
@@ -290,6 +311,7 @@ export declare const COLORS: {
         readonly "700": "#612819";
         readonly "800": "#331810";
         readonly "900": "#000000";
+        readonly main: "#c84628";
     };
     readonly info: {
         readonly "25": "#ffffff";
@@ -303,6 +325,7 @@ export declare const COLORS: {
         readonly "700": "#25385f";
         readonly "800": "#181f31";
         readonly "900": "#000000";
+        readonly main: "#376fc6";
     };
 };
 export declare const THEMES: {
