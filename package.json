@@ -1,6 +1,6 @@
 {
   "name": "@rahmatsaputra-my-id/global-assets",
-  "version": "0.0.13",
+  "version": "0.0.14",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [
@@ -8,7 +8,7 @@
   ],
   "scripts": {
     "prebuild": "node scripts/generate-assets.js",
-    "build": "tsc",
+    "build": "npm version patch --no-git-tag-version && tsc",
     "release": "standard-version",
     "release:publish": "standard-version && npm publish"
   },
