@@ -25,6 +25,9 @@ assets-repo/
 │   ├── sample2.png
 │   └── sample3.png
 │
+├── colors/
+│   └── colors.ts
+│
 └── README.md
 ```
 
