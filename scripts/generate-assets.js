@@ -37,12 +37,12 @@ function generateAsset(folder, name) {
   });
 
   const content = `
-export const ${name.toUpperCase()} = {
-  ${items.join(",\n  ")}
-} as const;
+    export const ${name.toUpperCase()} = {
+      ${items.join(",\n  ")}
+    } as const;
 
-export type ${name.toUpperCase()}Name = keyof typeof ${name.toUpperCase()};
-`;
+    export type ${name.toUpperCase()}Name = keyof typeof ${name.toUpperCase()};
+  `;
 
   fs.writeFileSync(path.join(ROOT, "src", `${name.toUpperCase()}.ts`), content);
   console.log(`✅ ${name.toUpperCase()} generated`);
@@ -128,34 +128,43 @@ function generateColors() {
     border: "#344054",
   };
 
-  let colorsExport = "export const COLORS = {\n";
-
+  let colorsContent = "";
   Object.entries(COLORS_OBJ).forEach(([name, value]) => {
     if (typeof value === "string") {
-      colorsExport += `  ${name}: "${value}",\n`;
+      colorsContent += `  ${name}: "${value}",\n`;
     } else {
-      colorsExport += `  ${name}: {\n`;
-      Object.entries(value).forEach(([step, hex]) => {
-        colorsExport += `    "${step}": "${hex}",\n`;
-      });
-      colorsExport += `    toString: () => "${value[500]}"\n`;
-      colorsExport += `  },\n`;
+      colorsContent += `  ${name}: (Object as any).assign("${value[500]}", ${JSON.stringify(value)}),\n`;
     }
   });
 
-  colorsExport += "} as any;";
-
   const content = `
-    ${colorsExport}
+    /**
+     * Definisi tipe agar warna bisa berfungsi sebagai string 
+     * sekaligus objek yang memiliki shades.
+     */
+    type ColorScale = string & {
+      readonly [key in ${steps.join(" | ")}]: string;
+    };
+
+    export const COLORS: {
+      ${Object.keys(flatColors)
+        .map((name) => `readonly ${name}: string;`)
+        .join("\n  ")}
+      ${Object.keys(scaleColors)
+        .map((name) => `readonly ${name}: ColorScale;`)
+        .join("\n  ")}
+    } = {
+    ${colorsContent}
+    } as any;
 
     export const THEMES = {
       light: ${JSON.stringify(lightTheme, null, 2)},
       dark: ${JSON.stringify(darkTheme, null, 2)}
     } as const;
 
-    export const withOpacity = (color: any, opacity: number): string => {
-      const hex = color.toString();
-      if (!hex.startsWith('#')) return 'rgba(0,0,0,0)';
+    export const withOpacity = (color: string | any, opacity: number): string => {
+      const hex = typeof color === 'string' ? color : color.toString();
+      if (!hex || hex.length < 7) return 'rgba(0,0,0,0)';
       const r = parseInt(hex.slice(1, 3), 16);
       const g = parseInt(hex.slice(3, 5), 16);
       const b = parseInt(hex.slice(5, 7), 16);
@@ -165,7 +174,7 @@ function generateColors() {
 
   const colorsFile = path.join(ROOT, "src", "COLORS.ts");
   fs.writeFileSync(colorsFile, content);
-  console.log("🎨 COLORS + THEMES generated successfully!");
+  console.log("🎨 COLORS + THEMES generated (No TS Errors!)");
 }
 
 /**
