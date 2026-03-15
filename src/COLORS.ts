@@ -1,9 +1,5 @@
 
-    /**
-     * AUTO GENERATED FILE
-     */
-
-    export const palettes = {
+    export const COLORS = {
   "primary": {
     "25": "#ffffff",
     "50": "#f9d5cf",
@@ -162,7 +158,7 @@
   }
 } as const;
 
-    export const themes = {
+    export const THEMES = {
       light: {
   "background": "#FFFFFF",
   "surface": "#F9FAFB",
@@ -177,6 +173,6 @@
 }
     } as const;
 
-    export type PaletteName = keyof typeof palettes;
-    export type ThemeName = keyof typeof themes;
+    export type PaletteName = keyof typeof COLORS;
+    export type ThemeName = keyof typeof THEMES;
   

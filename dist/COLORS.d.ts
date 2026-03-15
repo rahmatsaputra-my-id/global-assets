@@ -1,0 +1,174 @@
+export declare const COLORS: {
+    readonly primary: {
+        readonly "25": "#ffffff";
+        readonly "50": "#f9d5cf";
+        readonly "100": "#eeaba1";
+        readonly "200": "#e08175";
+        readonly "300": "#ce564c";
+        readonly "400": "#b82025";
+        readonly "500": "#911f1f";
+        readonly "600": "#6c1c19";
+        readonly "700": "#491814";
+        readonly "800": "#29110c";
+        readonly "900": "#000000";
+    };
+    readonly secondary: {
+        readonly "25": "#ffffff";
+        readonly "50": "#e1ddff";
+        readonly "100": "#c0bbff";
+        readonly "200": "#9c9bff";
+        readonly "300": "#6f7bff";
+        readonly "400": "#1e5eff";
+        readonly "500": "#274bc7";
+        readonly "600": "#273991";
+        readonly "700": "#21285f";
+        readonly "800": "#171731";
+        readonly "900": "#000000";
+    };
+    readonly success: {
+        readonly "25": "#ffffff";
+        readonly "50": "#dcf5e0";
+        readonly "100": "#b8eac2";
+        readonly "200": "#92dfa4";
+        readonly "300": "#67d386";
+        readonly "400": "#2ac769";
+        readonly "500": "#299c54";
+        readonly "600": "#25733f";
+        readonly "700": "#1e4c2c";
+        readonly "800": "#15281a";
+        readonly "900": "#000000";
+    };
+    readonly warning: {
+        readonly "25": "#ffffff";
+        readonly "50": "#ffefd5";
+        readonly "100": "#ffdfac";
+        readonly "200": "#ffcf82";
+        readonly "300": "#ffbf57";
+        readonly "400": "#ffb020";
+        readonly "500": "#c78a20";
+        readonly "600": "#92661d";
+        readonly "700": "#604418";
+        readonly "800": "#322411";
+        readonly "900": "#000000";
+    };
+    readonly error: {
+        readonly "25": "#ffffff";
+        readonly "50": "#ffdfd3";
+        readonly "100": "#ffbfa9";
+        readonly "200": "#ff9f80";
+        readonly "300": "#ff7c58";
+        readonly "400": "#ff5630";
+        readonly "500": "#c84628";
+        readonly "600": "#933721";
+        readonly "700": "#612819";
+        readonly "800": "#331810";
+        readonly "900": "#000000";
+    };
+    readonly info: {
+        readonly "25": "#ffffff";
+        readonly "50": "#e1e7ff";
+        readonly "100": "#c1cfff";
+        readonly "200": "#9fb8ff";
+        readonly "300": "#77a2ff";
+        readonly "400": "#3c8dff";
+        readonly "500": "#376fc6";
+        readonly "600": "#2f5391";
+        readonly "700": "#25385f";
+        readonly "800": "#181f31";
+        readonly "900": "#000000";
+    };
+    readonly purple: {
+        readonly "25": "#ffffff";
+        readonly "50": "#e9ddff";
+        readonly "100": "#d1bbfe";
+        readonly "200": "#b89bfd";
+        readonly "300": "#9b7afb";
+        readonly "400": "#7a5af8";
+        readonly "500": "#6248c1";
+        readonly "600": "#4b378d";
+        readonly "700": "#34275c";
+        readonly "800": "#1e1730";
+        readonly "900": "#000000";
+    };
+    readonly pink: {
+        readonly "25": "#ffffff";
+        readonly "50": "#ffdef2";
+        readonly "100": "#febce4";
+        readonly "200": "#fa99d7";
+        readonly "300": "#f574c9";
+        readonly "400": "#ee46bc";
+        readonly "500": "#ba3b93";
+        readonly "600": "#88306c";
+        readonly "700": "#5a2448";
+        readonly "800": "#2f1726";
+        readonly "900": "#000000";
+    };
+    readonly orange: {
+        readonly "25": "#ffffff";
+        readonly "50": "#ffe8d1";
+        readonly "100": "#ffd2a5";
+        readonly "200": "#ffbc78";
+        readonly "300": "#ffa64b";
+        readonly "400": "#f79009";
+        readonly "500": "#c17212";
+        readonly "600": "#8e5514";
+        readonly "700": "#5e3913";
+        readonly "800": "#31200e";
+        readonly "900": "#000000";
+    };
+    readonly teal: {
+        readonly "25": "#ffffff";
+        readonly "50": "#daf1ed";
+        readonly "100": "#b4e3db";
+        readonly "200": "#8dd5c9";
+        readonly "300": "#60c7b7";
+        readonly "400": "#14b8a6";
+        readonly "500": "#1e9082";
+        readonly "600": "#1f6a60";
+        readonly "700": "#1b4740";
+        readonly "800": "#142623";
+        readonly "900": "#000000";
+    };
+    readonly cyan: {
+        readonly "25": "#ffffff";
+        readonly "50": "#dcf0f6";
+        readonly "100": "#b8e2ee";
+        readonly "200": "#91d3e5";
+        readonly "300": "#63c5dd";
+        readonly "400": "#06b6d4";
+        readonly "500": "#1c8fa6";
+        readonly "600": "#1f6979";
+        readonly "700": "#1c4650";
+        readonly "800": "#15252a";
+        readonly "900": "#000000";
+    };
+    readonly indigo: {
+        readonly "25": "#ffffff";
+        readonly "50": "#e5dffd";
+        readonly "100": "#c9bffb";
+        readonly "200": "#aca0f8";
+        readonly "300": "#8b83f5";
+        readonly "400": "#6366f1";
+        readonly "500": "#5151bc";
+        readonly "600": "#3f3d89";
+        readonly "700": "#2d2b5a";
+        readonly "800": "#1b192f";
+        readonly "900": "#000000";
+    };
+};
+export declare const THEMES: {
+    readonly light: {
+        readonly background: "#FFFFFF";
+        readonly surface: "#F9FAFB";
+        readonly text: "#101828";
+        readonly border: "#E4E7EC";
+    };
+    readonly dark: {
+        readonly background: "#0C111D";
+        readonly surface: "#1D2939";
+        readonly text: "#F2F4F7";
+        readonly border: "#344054";
+    };
+};
+export type PaletteName = keyof typeof COLORS;
+export type ThemeName = keyof typeof THEMES;

@@ -37,27 +37,27 @@ function generateAsset(folder, name) {
     const key = file
       .replace(/^icon-|^img-|^font-/, "")
       .replace(/\.[^/.]+$/, "")
-      .replace(/-/g, "_");
+      .replace(/-/g, "_")
+      .toLowerCase();
 
     return `${key}: \`${BASE_URL}/${folder}/${file}\``;
   });
 
   const content = `
-    export const ${name} = {
+    export const ${name.toUpperCase()} = {
       ${items.join(",\n  ")}
     } as const;
 
-    export type ${name}Name = keyof typeof ${name};
+    export type ${name.toUpperCase()}Name = keyof typeof ${name.toUpperCase()};
   `;
 
-  fs.writeFileSync(path.join(ROOT, "src", `${name}.ts`), content);
-  console.log(`✅ ${name} generated`);
+  fs.writeFileSync(path.join(ROOT, "src", `${name.toUpperCase()}.ts`), content);
+  console.log(`✅ ${name.toUpperCase()} generated`);
 }
 
 /**
  * GENERATE COLOR PALETTES
  */
-
 const baseColors = {
   primary: "#B82025",
   secondary: "#1E5EFF",
@@ -83,19 +83,16 @@ function generateScale(color) {
     .colors(steps.length);
 
   const result = {};
-
   steps.forEach((step, i) => {
     result[step] = scale[i];
   });
-
   return result;
 }
 
 function generateColors() {
   const palettes = {};
-
   Object.entries(baseColors).forEach(([name, color]) => {
-    palettes[name] = generateScale(color);
+    palettes[name.toLowerCase()] = generateScale(color);
   });
 
   const lightTheme = {
@@ -113,36 +110,25 @@ function generateColors() {
   };
 
   const content = `
-    /**
-     * AUTO GENERATED FILE
-     */
+    export const COLORS = ${JSON.stringify(palettes, null, 2)} as const;
 
-    export const palettes = ${JSON.stringify(palettes, null, 2)} as const;
-
-    export const themes = {
+    export const THEMES = {
       light: ${JSON.stringify(lightTheme, null, 2)},
       dark: ${JSON.stringify(darkTheme, null, 2)}
     } as const;
 
-    export type PaletteName = keyof typeof palettes;
-    export type ThemeName = keyof typeof themes;
+    export type PaletteName = keyof typeof COLORS;
+    export type ThemeName = keyof typeof THEMES;
   `;
 
-  const colorsDir = path.join(ROOT, "colors");
-
-  if (!fs.existsSync(colorsDir)) {
-    fs.mkdirSync(colorsDir);
-  }
-
-  fs.writeFileSync(path.join(colorsDir, "colors.ts"), content);
-
-  console.log("🎨 Colors generated");
+  const colorsFile = path.join(ROOT, "src", "COLORS.ts");
+  fs.writeFileSync(colorsFile, content);
+  console.log("🎨 COLORS generated in src/COLORS.ts");
 }
 
 /**
  * RUN GENERATORS
  */
-
 Object.entries(folders).forEach(([folder, name]) => {
   generateAsset(folder, name);
 });
