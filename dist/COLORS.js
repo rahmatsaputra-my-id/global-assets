@@ -1,11 +1,11 @@
 export var COLORS = {
-    "white": "#ffffff",
-    "black": "#000000",
-    "gray": "#808080",
-    "lightGray": "#d3d3d3",
-    "darkGray": "#4b4b4b",
-    "silver": "#c0c0c0",
-    "red": {
+    white: "#ffffff",
+    black: "#000000",
+    gray: "#808080",
+    lightGray: "#d3d3d3",
+    darkGray: "#4b4b4b",
+    silver: "#c0c0c0",
+    red: {
         "25": "#ffffff",
         "50": "#ffd9cb",
         "100": "#ffb299",
@@ -17,9 +17,9 @@ export var COLORS = {
         "700": "#62190c",
         "800": "#341307",
         "900": "#000000",
-        "main": "#c81708"
+        toString: function () { return "#c81708"; }
     },
-    "blue": {
+    blue: {
         "25": "#ffffff",
         "50": "#e3d0ff",
         "100": "#c4a2ff",
@@ -31,9 +31,9 @@ export var COLORS = {
         "700": "#22115f",
         "800": "#180d31",
         "900": "#000000",
-        "main": "#200dc7"
+        toString: function () { return "#200dc7"; }
     },
-    "green": {
+    green: {
         "25": "#ffffff",
         "50": "#e2ffd7",
         "100": "#c3ffaf",
@@ -45,9 +45,9 @@ export var COLORS = {
         "700": "#215f18",
         "800": "#183112",
         "900": "#000000",
-        "main": "#20c715"
+        toString: function () { return "#20c715"; }
     },
-    "yellow": {
+    yellow: {
         "25": "#ffffff",
         "50": "#ffffd9",
         "100": "#ffffb2",
@@ -59,9 +59,9 @@ export var COLORS = {
         "700": "#605e19",
         "800": "#323013",
         "900": "#000000",
-        "main": "#c7c617"
+        toString: function () { return "#c7c617"; }
     },
-    "orange": {
+    orange: {
         "25": "#ffffff",
         "50": "#ffecd2",
         "100": "#ffdaa7",
@@ -73,9 +73,9 @@ export var COLORS = {
         "700": "#604013",
         "800": "#32230f",
         "900": "#000000",
-        "main": "#c78210"
+        toString: function () { return "#c78210"; }
     },
-    "purple": {
+    purple: {
         "25": "#ffffff",
         "50": "#e8d0e5",
         "100": "#cfa2cb",
@@ -87,9 +87,9 @@ export var COLORS = {
         "700": "#351134",
         "800": "#1e0d1d",
         "900": "#000000",
-        "main": "#660d65"
+        toString: function () { return "#660d65"; }
     },
-    "pink": {
+    pink: {
         "25": "#ffffff",
         "50": "#fff2f4",
         "100": "#ffe6ea",
@@ -101,9 +101,9 @@ export var COLORS = {
         "700": "#5f494d",
         "800": "#312728",
         "900": "#000000",
-        "main": "#c6969f"
+        toString: function () { return "#c6969f"; }
     },
-    "cyan": {
+    cyan: {
         "25": "#ffffff",
         "50": "#e2ffff",
         "100": "#c3ffff",
@@ -115,9 +115,9 @@ export var COLORS = {
         "700": "#225f5e",
         "800": "#183130",
         "900": "#000000",
-        "main": "#21c6c6"
+        toString: function () { return "#21c6c6"; }
     },
-    "teal": {
+    teal: {
         "25": "#ffffff",
         "50": "#d4e5e4",
         "100": "#a9cbca",
@@ -129,9 +129,9 @@ export var COLORS = {
         "700": "#143433",
         "800": "#101d1d",
         "900": "#000000",
-        "main": "#116565"
+        toString: function () { return "#116565"; }
     },
-    "indigo": {
+    indigo: {
         "25": "#ffffff",
         "50": "#ddcce6",
         "100": "#ba9bcd",
@@ -143,9 +143,9 @@ export var COLORS = {
         "700": "#230d35",
         "800": "#18081e",
         "900": "#000000",
-        "main": "#3e0867"
+        toString: function () { return "#3e0867"; }
     },
-    "brown": {
+    brown: {
         "25": "#ffffff",
         "50": "#f3d5d0",
         "100": "#e4aba3",
@@ -157,9 +157,9 @@ export var COLORS = {
         "700": "#421915",
         "800": "#25110d",
         "900": "#000000",
-        "main": "#832523"
+        toString: function () { return "#832523"; }
     },
-    "lime": {
+    lime: {
         "25": "#ffffff",
         "50": "#def6d7",
         "100": "#bcedb0",
@@ -171,9 +171,9 @@ export var COLORS = {
         "700": "#214e1c",
         "800": "#162913",
         "900": "#000000",
-        "main": "#2fa02b"
+        toString: function () { return "#2fa02b"; }
     },
-    "magenta": {
+    magenta: {
         "25": "#ffffff",
         "50": "#ffdcff",
         "100": "#ffb8ff",
@@ -185,9 +185,9 @@ export var COLORS = {
         "700": "#601c5f",
         "800": "#321531",
         "900": "#000000",
-        "main": "#c71ac6"
+        toString: function () { return "#c71ac6"; }
     },
-    "navy": {
+    navy: {
         "25": "#ffffff",
         "50": "#d4c9e6",
         "100": "#aa95cd",
@@ -199,9 +199,9 @@ export var COLORS = {
         "700": "#160734",
         "800": "#11031e",
         "900": "#000000",
-        "main": "#110565"
+        toString: function () { return "#110565"; }
     },
-    "olive": {
+    olive: {
         "25": "#ffffff",
         "50": "#e8e4ce",
         "100": "#cfca9e",
@@ -213,9 +213,9 @@ export var COLORS = {
         "700": "#35330f",
         "800": "#1f1d0a",
         "900": "#000000",
-        "main": "#66650b"
+        toString: function () { return "#66650b"; }
     },
-    "maroon": {
+    maroon: {
         "25": "#ffffff",
         "50": "#edcec7",
         "100": "#d79e91",
@@ -227,9 +227,9 @@ export var COLORS = {
         "700": "#370f01",
         "800": "#220a01",
         "900": "#000000",
-        "main": "#670b01"
+        toString: function () { return "#670b01"; }
     },
-    "gold": {
+    gold: {
         "25": "#ffffff",
         "50": "#fff6d6",
         "100": "#ffeead",
@@ -241,9 +241,9 @@ export var COLORS = {
         "700": "#605117",
         "800": "#322a11",
         "900": "#000000",
-        "main": "#c7a814"
+        toString: function () { return "#c7a814"; }
     },
-    "primary": {
+    primary: {
         "25": "#ffffff",
         "50": "#f9d5cf",
         "100": "#eeaba1",
@@ -255,9 +255,9 @@ export var COLORS = {
         "700": "#491814",
         "800": "#29110c",
         "900": "#000000",
-        "main": "#911f1f"
+        toString: function () { return "#911f1f"; }
     },
-    "secondary": {
+    secondary: {
         "25": "#ffffff",
         "50": "#e1ddff",
         "100": "#c0bbff",
@@ -269,9 +269,9 @@ export var COLORS = {
         "700": "#21285f",
         "800": "#171731",
         "900": "#000000",
-        "main": "#274bc7"
+        toString: function () { return "#274bc7"; }
     },
-    "success": {
+    success: {
         "25": "#ffffff",
         "50": "#dcf5e0",
         "100": "#b8eac2",
@@ -283,9 +283,9 @@ export var COLORS = {
         "700": "#1e4c2c",
         "800": "#15281a",
         "900": "#000000",
-        "main": "#299c54"
+        toString: function () { return "#299c54"; }
     },
-    "warning": {
+    warning: {
         "25": "#ffffff",
         "50": "#ffefd5",
         "100": "#ffdfac",
@@ -297,9 +297,9 @@ export var COLORS = {
         "700": "#604418",
         "800": "#322411",
         "900": "#000000",
-        "main": "#c78a20"
+        toString: function () { return "#c78a20"; }
     },
-    "error": {
+    error: {
         "25": "#ffffff",
         "50": "#ffdfd3",
         "100": "#ffbfa9",
@@ -311,9 +311,9 @@ export var COLORS = {
         "700": "#612819",
         "800": "#331810",
         "900": "#000000",
-        "main": "#c84628"
+        toString: function () { return "#c84628"; }
     },
-    "info": {
+    info: {
         "25": "#ffffff",
         "50": "#e1e7ff",
         "100": "#c1cfff",
@@ -325,28 +325,29 @@ export var COLORS = {
         "700": "#25385f",
         "800": "#181f31",
         "900": "#000000",
-        "main": "#376fc6"
-    }
+        toString: function () { return "#376fc6"; }
+    },
 };
 export var THEMES = {
     light: {
         "background": "#FFFFFF",
-        "surface": "#F9FAFB",
         "text": "#101828",
+        "surface": "#F9FAFB",
         "border": "#E4E7EC"
     },
     dark: {
         "background": "#0C111D",
-        "surface": "#1D2939",
         "text": "#F2F4F7",
+        "surface": "#1D2939",
         "border": "#344054"
     }
 };
-export var withOpacity = function (hexColor, opacity) {
-    if (typeof hexColor !== 'string')
+export var withOpacity = function (color, opacity) {
+    var hex = color.toString();
+    if (!hex.startsWith('#'))
         return 'rgba(0,0,0,0)';
-    var r = parseInt(hexColor.slice(1, 3), 16);
-    var g = parseInt(hexColor.slice(3, 5), 16);
-    var b = parseInt(hexColor.slice(5, 7), 16);
+    var r = parseInt(hex.slice(1, 3), 16);
+    var g = parseInt(hex.slice(3, 5), 16);
+    var b = parseInt(hex.slice(5, 7), 16);
     return "rgba(".concat(r, ", ").concat(g, ", ").concat(b, ", ").concat(opacity, ")");
 };

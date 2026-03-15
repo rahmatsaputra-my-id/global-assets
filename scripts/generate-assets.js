@@ -105,56 +105,67 @@ function generateScale(color) {
  * GENERATE COLORS OBJECT
  */
 function generateColors() {
-  const COLORS = {};
+  const COLORS_OBJ = {};
 
   Object.entries(flatColors).forEach(([name, color]) => {
-    COLORS[name] = chroma(color).hex();
+    COLORS_OBJ[name] = chroma(color).hex();
   });
 
   Object.entries(scaleColors).forEach(([name, color]) => {
-    const scale = generateScale(color);
-
-    COLORS[name] = {
-      ...scale,
-      main: scale[500],
-    };
+    COLORS_OBJ[name] = generateScale(color);
   });
 
   const lightTheme = {
     background: "#FFFFFF",
-    surface: "#F9FAFB",
     text: "#101828",
+    surface: "#F9FAFB",
     border: "#E4E7EC",
   };
-
   const darkTheme = {
     background: "#0C111D",
-    surface: "#1D2939",
     text: "#F2F4F7",
+    surface: "#1D2939",
     border: "#344054",
   };
 
+  let colorsExport = "export const COLORS = {\n";
+
+  Object.entries(COLORS_OBJ).forEach(([name, value]) => {
+    if (typeof value === "string") {
+      colorsExport += `  ${name}: "${value}",\n`;
+    } else {
+      colorsExport += `  ${name}: {\n`;
+      Object.entries(value).forEach(([step, hex]) => {
+        colorsExport += `    "${step}": "${hex}",\n`;
+      });
+      colorsExport += `    toString: () => "${value[500]}"\n`;
+      colorsExport += `  },\n`;
+    }
+  });
+
+  colorsExport += "} as any;";
+
   const content = `
-    export const COLORS = ${JSON.stringify(COLORS, null, 2)} as const;
+    ${colorsExport}
 
     export const THEMES = {
       light: ${JSON.stringify(lightTheme, null, 2)},
       dark: ${JSON.stringify(darkTheme, null, 2)}
     } as const;
 
-
-    export const withOpacity = (hexColor: string, opacity: number): string => {
-      if (typeof hexColor !== 'string') return 'rgba(0,0,0,0)';
-      
-      const r = parseInt(hexColor.slice(1, 3), 16);
-      const g = parseInt(hexColor.slice(3, 5), 16);
-      const b = parseInt(hexColor.slice(5, 7), 16);
+    export const withOpacity = (color: any, opacity: number): string => {
+      const hex = color.toString();
+      if (!hex.startsWith('#')) return 'rgba(0,0,0,0)';
+      const r = parseInt(hex.slice(1, 3), 16);
+      const g = parseInt(hex.slice(3, 5), 16);
+      const b = parseInt(hex.slice(5, 7), 16);
       return \`rgba(\${r}, \${g}, \${b}, \${opacity})\`;
     };
   `;
 
   const colorsFile = path.join(ROOT, "src", "COLORS.ts");
   fs.writeFileSync(colorsFile, content);
+  console.log("🎨 COLORS + THEMES generated successfully!");
 }
 
 /**
