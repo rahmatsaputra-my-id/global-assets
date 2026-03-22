@@ -267,6 +267,10 @@ export declare const themes: {
         readonly border: "#E4E7EC";
         readonly cardBackground: "#F8F8F8";
         readonly cardColor: "#101828";
+        readonly borderBottom: "0.5px solid rgba(0, 0, 0, 0.12)";
+        readonly boxShadow: "1px 2px 9px rgba(0, 0, 0, 0.2)";
+        readonly boxShadowCard: "1px 2px 5px rgba(0, 0, 0, 0.3)";
+        readonly boxShadowImage: "0px 5px 5px 0px rgba(0, 0, 0, 0.5)";
     };
     readonly dark: {
         readonly background: "#0C111D";
@@ -275,6 +279,10 @@ export declare const themes: {
         readonly border: "#344054";
         readonly cardBackground: "#1D2939";
         readonly cardColor: "#F2F4F7";
+        readonly borderBottom: "0.5px solid rgba(255, 255, 255, 0.12)";
+        readonly boxShadow: "1px 2px 9px rgba(0, 0, 0, 0.8)";
+        readonly boxShadowCard: "1px 2px 5px rgba(0, 0, 0, 0.7)";
+        readonly boxShadowImage: "0px 5px 5px 0px rgba(0, 0, 0, 0.9)";
     };
 };
 export declare const withOpacity: (color: string | any, opacity: number) => string;

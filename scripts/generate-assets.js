@@ -122,6 +122,10 @@ function generateColors() {
     border: "#E4E7EC",
     cardBackground: "#F8F8F8",
     cardColor: "#101828",
+    borderBottom: "0.5px solid rgba(0, 0, 0, 0.12)",
+    boxShadow: "1px 2px 9px rgba(0, 0, 0, 0.2)",
+    boxShadowCard: "1px 2px 5px rgba(0, 0, 0, 0.3)",
+    boxShadowImage: "0px 5px 5px 0px rgba(0, 0, 0, 0.5)",
   };
   const darkTheme = {
     background: "#0C111D",
@@ -130,6 +134,10 @@ function generateColors() {
     border: "#344054",
     cardBackground: "#1D2939",
     cardColor: "#F2F4F7",
+    borderBottom: "0.5px solid rgba(255, 255, 255, 0.12)",
+    boxShadow: "1px 2px 9px rgba(0, 0, 0, 0.8)",
+    boxShadowCard: "1px 2px 5px rgba(0, 0, 0, 0.7)",
+    boxShadowImage: "0px 5px 5px 0px rgba(0, 0, 0, 0.9)",
   };
 
   let colorsContent = "";
