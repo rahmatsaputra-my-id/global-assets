@@ -265,12 +265,16 @@ export declare const themes: {
         readonly text: "#101828";
         readonly surface: "#F9FAFB";
         readonly border: "#E4E7EC";
+        readonly cardBackground: "#F8F8F8";
+        readonly cardColor: "#101828";
     };
     readonly dark: {
         readonly background: "#0C111D";
         readonly text: "#F2F4F7";
         readonly surface: "#1D2939";
         readonly border: "#344054";
+        readonly cardBackground: "#1D2939";
+        readonly cardColor: "#F2F4F7";
     };
 };
 export declare const withOpacity: (color: string | any, opacity: number) => string;

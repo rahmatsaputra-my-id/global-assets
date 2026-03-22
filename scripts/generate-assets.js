@@ -120,12 +120,16 @@ function generateColors() {
     text: "#101828",
     surface: "#F9FAFB",
     border: "#E4E7EC",
+    cardBackground: "#F8F8F8",
+    cardColor: "#101828",
   };
   const darkTheme = {
     background: "#0C111D",
     text: "#F2F4F7",
     surface: "#1D2939",
     border: "#344054",
+    cardBackground: "#1D2939",
+    cardColor: "#F2F4F7",
   };
 
   let colorsContent = "";
