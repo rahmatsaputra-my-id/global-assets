@@ -59,10 +59,12 @@
   image_gallery_5: `https://raw.githubusercontent.com/rahmatsaputra-my-id/global-assets/master/images/image-gallery-5.jpg`,
   image_gallery_6: `https://raw.githubusercontent.com/rahmatsaputra-my-id/global-assets/master/images/image-gallery-6.jpg`,
   image_groom: `https://raw.githubusercontent.com/rahmatsaputra-my-id/global-assets/master/images/image-groom.jpg`,
+  image_icon_raikasen: `https://raw.githubusercontent.com/rahmatsaputra-my-id/global-assets/master/images/image-icon-raikasen.png`,
   image_not_available: `https://raw.githubusercontent.com/rahmatsaputra-my-id/global-assets/master/images/image-not-available.png`,
   image_profile: `https://raw.githubusercontent.com/rahmatsaputra-my-id/global-assets/master/images/image-profile.webp`,
   image_qris: `https://raw.githubusercontent.com/rahmatsaputra-my-id/global-assets/master/images/image-qris.png`,
-  image_quote_header: `https://raw.githubusercontent.com/rahmatsaputra-my-id/global-assets/master/images/image-quote-header.png`
+  image_quote_header: `https://raw.githubusercontent.com/rahmatsaputra-my-id/global-assets/master/images/image-quote-header.png`,
+  image_text_raikasen: `https://raw.githubusercontent.com/rahmatsaputra-my-id/global-assets/master/images/image-text-raikasen.png`
     } as const;
 
     export type imagesName = keyof typeof images;

@@ -58,9 +58,11 @@ export declare const images: {
     readonly image_gallery_5: "https://raw.githubusercontent.com/rahmatsaputra-my-id/global-assets/master/images/image-gallery-5.jpg";
     readonly image_gallery_6: "https://raw.githubusercontent.com/rahmatsaputra-my-id/global-assets/master/images/image-gallery-6.jpg";
     readonly image_groom: "https://raw.githubusercontent.com/rahmatsaputra-my-id/global-assets/master/images/image-groom.jpg";
+    readonly image_icon_raikasen: "https://raw.githubusercontent.com/rahmatsaputra-my-id/global-assets/master/images/image-icon-raikasen.png";
     readonly image_not_available: "https://raw.githubusercontent.com/rahmatsaputra-my-id/global-assets/master/images/image-not-available.png";
     readonly image_profile: "https://raw.githubusercontent.com/rahmatsaputra-my-id/global-assets/master/images/image-profile.webp";
     readonly image_qris: "https://raw.githubusercontent.com/rahmatsaputra-my-id/global-assets/master/images/image-qris.png";
     readonly image_quote_header: "https://raw.githubusercontent.com/rahmatsaputra-my-id/global-assets/master/images/image-quote-header.png";
+    readonly image_text_raikasen: "https://raw.githubusercontent.com/rahmatsaputra-my-id/global-assets/master/images/image-text-raikasen.png";
 };
 export type imagesName = keyof typeof images;
