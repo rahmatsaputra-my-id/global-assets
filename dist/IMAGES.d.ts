@@ -33,6 +33,7 @@ export declare const images: {
     readonly image_certificate_18: "https://raw.githubusercontent.com/rahmatsaputra-my-id/global-assets/master/images/image-certificate-18.jpg";
     readonly image_certificate_19: "https://raw.githubusercontent.com/rahmatsaputra-my-id/global-assets/master/images/image-certificate-19.jpg";
     readonly image_certificate_2: "https://raw.githubusercontent.com/rahmatsaputra-my-id/global-assets/master/images/image-certificate-2.jpg";
+    readonly image_certificate_20: "https://raw.githubusercontent.com/rahmatsaputra-my-id/global-assets/master/images/image-certificate-20.jpg";
     readonly image_certificate_3: "https://raw.githubusercontent.com/rahmatsaputra-my-id/global-assets/master/images/image-certificate-3.jpg";
     readonly image_certificate_4: "https://raw.githubusercontent.com/rahmatsaputra-my-id/global-assets/master/images/image-certificate-4.jpg";
     readonly image_certificate_5: "https://raw.githubusercontent.com/rahmatsaputra-my-id/global-assets/master/images/image-certificate-5.jpg";
