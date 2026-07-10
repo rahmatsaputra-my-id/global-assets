@@ -35,6 +35,7 @@ export declare const icons: {
     readonly history_transaction: "https://raw.githubusercontent.com/rahmatsaputra-my-id/global-assets/master/icons/icon-history-transaction.png";
     readonly home_bold: "https://raw.githubusercontent.com/rahmatsaputra-my-id/global-assets/master/icons/icon-home-bold.png";
     readonly html: "https://raw.githubusercontent.com/rahmatsaputra-my-id/global-assets/master/icons/icon-html.png";
+    readonly information_triangle: "https://raw.githubusercontent.com/rahmatsaputra-my-id/global-assets/master/icons/icon-information-triangle.png";
     readonly information: "https://raw.githubusercontent.com/rahmatsaputra-my-id/global-assets/master/icons/icon-information.png";
     readonly java: "https://raw.githubusercontent.com/rahmatsaputra-my-id/global-assets/master/icons/icon-java.png";
     readonly javascript: "https://raw.githubusercontent.com/rahmatsaputra-my-id/global-assets/master/icons/icon-javascript.png";

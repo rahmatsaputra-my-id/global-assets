@@ -36,6 +36,7 @@
   history_transaction: `https://raw.githubusercontent.com/rahmatsaputra-my-id/global-assets/master/icons/icon-history-transaction.png`,
   home_bold: `https://raw.githubusercontent.com/rahmatsaputra-my-id/global-assets/master/icons/icon-home-bold.png`,
   html: `https://raw.githubusercontent.com/rahmatsaputra-my-id/global-assets/master/icons/icon-html.png`,
+  information_triangle: `https://raw.githubusercontent.com/rahmatsaputra-my-id/global-assets/master/icons/icon-information-triangle.png`,
   information: `https://raw.githubusercontent.com/rahmatsaputra-my-id/global-assets/master/icons/icon-information.png`,
   java: `https://raw.githubusercontent.com/rahmatsaputra-my-id/global-assets/master/icons/icon-java.png`,
   javascript: `https://raw.githubusercontent.com/rahmatsaputra-my-id/global-assets/master/icons/icon-javascript.png`,
